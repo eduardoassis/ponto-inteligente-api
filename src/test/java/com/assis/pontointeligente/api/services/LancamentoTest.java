@@ -7,14 +7,12 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.BDDMockito;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -60,6 +58,12 @@ public class LancamentoTest {
 	public void testBuscarLancamentoPorId() {
 		Optional<Lancamento> lancamento = this.lancamentoService.buscarPorId(1L);
 		assertTrue(lancamento.isPresent());
+	}
+	
+	@Test
+	public void testPersistirLancamento() {
+		Lancamento lancamento = this.lancamentoService.persistir(new Lancamento());
+		assertNotNull(lancamento);
 	}
 	
 	@Test
