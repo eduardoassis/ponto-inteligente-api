@@ -46,7 +46,7 @@ public class EmpresaController {
 		
 		if(!empresa.isPresent()) {
 			log.info("Empresa nao encontrada para o CNPJ: {}", cnpj);
-			response.getErros().add("Empresa não encontrada para o CNPJ " + cnpj);
+			response.getErrors().add("Empresa não encontrada para o CNPJ " + cnpj);
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
 		}
 		
@@ -58,7 +58,7 @@ public class EmpresaController {
 		
 		EmpresaDto empresaDto = new EmpresaDto();
 
-		empresa.setId(empresa.getId());
+		empresaDto.setId(empresa.getId());
 		empresaDto.setCnpj(empresa.getCnpj());
 		empresaDto.setRazaSocial(empresa.getRazaoSocial());
 		
