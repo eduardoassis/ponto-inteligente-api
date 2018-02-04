@@ -3,7 +3,7 @@ package com.assis.pontointeligente.api.dtos;
 public class EmpresaDto {
 
 	private Long id;
-	private String razaSocial;
+	private String razaoSocial;
 	private String cnpj;
 
 	public EmpresaDto() {
@@ -17,12 +17,12 @@ public class EmpresaDto {
 		this.id = id;
 	}
 	
-	public String getRazaSocial() {
-		return razaSocial;
+	public String getRazaoSocial() {
+		return razaoSocial;
 	}
 	
-	public void setRazaSocial(String razaSocial) {
-		this.razaSocial = razaSocial;
+	public void setRazaoSocial(String razaSocial) {
+		this.razaoSocial = razaSocial;
 	}
 	
 	public String getCnpj() {
@@ -35,6 +35,6 @@ public class EmpresaDto {
 	
 	@Override
 	public String toString() {
-		return "Empresa [=id" + id + ", razaoSocial=" + razaSocial + ", cnpj=" + cnpj + "]";
+		return "Empresa [=id" + id + ", razaoSocial=" + razaoSocial + ", cnpj=" + cnpj + "]";
 	}
 }
