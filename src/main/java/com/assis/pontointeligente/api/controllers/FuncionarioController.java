@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.assis.pontointeligente.api.dtos.FuncionarioDto;
 import com.assis.pontointeligente.api.entities.Funcionario;
 import com.assis.pontointeligente.api.response.Response;
 import com.assis.pontointeligente.api.services.FuncionarioService;
@@ -58,7 +59,6 @@ public class FuncionarioController {
 		
 		if (result.hasErrors()) {
 			LOGGER.info("Erro validando funcionário: {}", result.getAllErrors());
-			response.getErrors().add("Funcionário com id " + id + " não encontrado");
 			result.getAllErrors().forEach(error -> response.getErrors().add(error.getDefaultMessage()));
 			return ResponseEntity.badRequest().body(response);
 		}
