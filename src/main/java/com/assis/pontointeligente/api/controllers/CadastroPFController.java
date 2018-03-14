@@ -95,7 +95,7 @@ public class CadastroPFController {
 			.ifPresent(qtdHorasTrabalhoDiaOpt -> cadastroPFDto.setQtdHorasTrabalhoDia(Optional.ofNullable(Float.toString(qtdHorasTrabalhoDiaOpt))));
 		
 		funcionario.getQtdHorasAlmocoOpt()
-			.ifPresent(qtdHorasAlmocoOpt -> cadastroPFDto.setQtdHorasAlmoco(Optional.ofNullable(qtdHorasAlmocoOpt.toString())));
+			.ifPresent(qtdHorasAlmocoOpt -> cadastroPFDto.setQtdHorasAlmoco(Optional.ofNullable(String.valueOf(qtdHorasAlmocoOpt))));
 		
 		funcionario.getValorHoraOpt().ifPresent(valorHoraOpt -> cadastroPFDto.setValorHora(Optional.ofNullable(valorHoraOpt.toString())));
 		
