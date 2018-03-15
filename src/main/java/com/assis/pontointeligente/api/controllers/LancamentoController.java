@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
@@ -95,7 +96,7 @@ public class LancamentoController {
 		if (!lancamento.isPresent()) {
 			log.info("Lançamento não encontrado para o ID: {}", id);
 			response.getErrors().add("Lançamento não encontrado para o id " + id);
-			return ResponseEntity.badRequest().body(response);
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
 		}
 
 		response.setData(this.converterLancamentoDto(lancamento.get()));
