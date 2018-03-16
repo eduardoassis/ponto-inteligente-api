@@ -5,9 +5,11 @@ API do sistema de ponto inteligente com Java e Spring Boot.
 
 
 **Acesso à documentação da API:**
-[Ponto Inteligente](https://pontointeligente.docs.apiary.io/)
+
+* [Ponto Inteligente](https://pontointeligente.docs.apiary.io/)
+
 
 **Ambientes disponíveis:**
 
 
-* [Produção](https://dashboard.heroku.com)
+* [Produção](https://calm-bastion-43271.herokuapp.com)
